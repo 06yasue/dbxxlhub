@@ -5,8 +5,8 @@
             const IMG_URL = 'https://image.tmdb.org/t/p/w500';
             const IMG_BG_URL = 'https://image.tmdb.org/t/p/w1280';
             
-            const FALLBACK_POSTER = '/no-poster.png';   
-            const FALLBACK_BACKDROP = '/no-backdrop.png'; 
+            const FALLBACK_POSTER = './img/no-poster.png';   
+            const FALLBACK_BACKDROP = './img/no-backdrop.png'; 
             
             const homeView = document.getElementById('home-view');
             const playerView = document.getElementById('player-view');
