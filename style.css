@@ -1,0 +1,212 @@
+        /* =========================================
+           1. RESET, BASE & SCROLLING
+           ========================================= */
+        html { scroll-behavior: smooth; } 
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: #0b0b0d; color: #d1d1d1; 
+            font-family: "Jost", sans-serif; overflow-x: hidden; 
+            padding-top: 60px; padding-bottom: 70px; 
+        }
+        
+        a { text-decoration: none !important; color: inherit; transition: color 0.2s; }
+        a:hover { color: #f5b50a; }
+        .wrapper-utama { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* =========================================
+           2. FLOATING NAVBAR & BOTTOM MENU
+           ========================================= */
+        .navbar-pro { 
+            background-color: rgba(18, 18, 20, 0.95); backdrop-filter: blur(10px); 
+            border: none; border-bottom: 1px solid #1f1f23; border-radius: 0; margin-bottom: 0;
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1030;
+        }
+        .brand-container { display: flex; align-items: center; height: 50px; }
+        .brand-logo-img { height: 28px; width: auto; margin-right: 8px; border-radius: 4px; }
+        .brand-text { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; text-transform: uppercase; }
+        .brand-text .highlight { color: #f5b50a; }
+        .navbar-pro .navbar-nav > li > a { color: #a1a1aa; font-weight: 500; }
+        .navbar-pro .navbar-nav > li > a:hover { color: #ffffff; }
+        .navbar-toggle { border: none; margin-top: 8px; }
+        .navbar-toggle .icon-bar { background-color: #f5b50a; }
+
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background-color: rgba(18, 18, 20, 0.95); backdrop-filter: blur(10px);
+            border-top: 1px solid #1f1f23; z-index: 1030;
+            display: flex; justify-content: space-around; align-items: center; padding: 8px 0;
+        }
+        .bottom-nav a { display: flex; flex-direction: column; align-items: center; color: #a1a1aa; font-size: 11px; font-weight: 600; }
+        .bottom-nav a i { font-size: 24px; margin-bottom: 3px; }
+        .bottom-nav a:hover, .bottom-nav a.active { color: #f5b50a; }
+
+        /* =========================================
+           3. AREA CUSTOM VIDEO PLAYER
+           ========================================= */
+        .video-section { margin: 10px 0; display: none; overflow-x: hidden; }
+        .video-section .row { margin-left: 0; margin-right: 0; }
+        
+        .video-container { 
+            position: relative; width: 100%; padding-top: 56.25%; 
+            background: #000; border-radius: 8px; overflow: hidden; 
+            border: 1px solid #1f1f23; box-shadow: 0 8px 20px rgba(0,0,0,0.5); 
+        }
+        
+        /* CEGAH KLIK KANAN / TAHAN LAMA (ANTI DOWNLOAD) */
+        .video-screen { 
+            position: absolute; top:0; left:0; width: 100%; height: 100%; 
+            cursor: pointer; background-color: #000; outline: none; 
+            -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; 
+        }
+        
+        .custom-overlay { position: absolute; top:0; left:0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+        
+        .play-center { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            color: #f5b50a; cursor: pointer; transition: 0.2s ease; pointer-events: auto; 
+        }
+        .play-center i { font-size: 80px; text-shadow: 0 4px 10px rgba(0,0,0,0.6); }
+        .play-center:hover { transform: translate(-50%, -50%) scale(1.1); color: #ffcc33; }
+        
+        /* KONTROL BAR: Awalnya sembunyi total (visibility hidden) */
+        .controls-bar { 
+            position: absolute; bottom: 0; left: 0; width: 100%; 
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); 
+            padding: 10px 15px 5px 15px; opacity: 0; visibility: hidden; 
+            transition: opacity 0.3s, visibility 0.3s; pointer-events: auto; 
+        }
+        /* Hanya tampil JIKA class has-started sudah ditambah via JS */
+        .video-container.has-started:hover .controls-bar, 
+        .video-container.has-started.paused .controls-bar { 
+            opacity: 1; visibility: visible; 
+        }
+        
+        .progress-container { width: 100%; height: 5px; background: rgba(255,255,255,0.2); cursor: pointer; border-radius: 2px; margin-bottom: 10px; position: relative; }
+        .progress-filled { height: 100%; width: 0%; background: #f5b50a; border-radius: 2px; position: relative; transition: width 0.1s linear; }
+        .progress-filled::after { content: ''; position: absolute; right: -5px; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; background: #f5b50a; border-radius: 50%; }
+        
+        .controls-btns { display: flex; align-items: center; color: white; gap: 15px; }
+        .controls-btns button { background: none; border: none; color: white; cursor: pointer; outline: none; display: flex; }
+        .controls-btns button:hover { color: #f5b50a; }
+        .time-text { font-size: 13px; font-weight: 500; color: #ccc; }
+        
+        /* Box Info Data Film Kumplit */
+        .video-info-pro { margin-top: 20px; padding: 20px; background: #121214; border-radius: 8px; border: 1px solid #1f1f23; }
+        .title-pro { color: white; font-weight: 700; margin: 0 0 10px 0; }
+        .meta-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+        .meta-tag { background: rgba(255,255,255,0.08); padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; color: #e4e4e7; display: flex; align-items: center; gap: 4px; }
+        .meta-tag i { font-size: 14px; color: #f5b50a; }
+        .desc-pro { color: #a1a1aa; margin: 0; line-height: 1.6; font-size: 14px; }
+
+        .sidebar-title { color: #fff; font-size: 18px; font-weight: 700; margin: 0 0 15px 0; padding-bottom: 10px; border-bottom: 2px solid #1f1f23; }
+        .sidebar-container { margin-top: 10px; }
+
+        /* =========================================
+           4. GLOBAL POPUP GATEKEEPER 
+           ========================================= */
+        .gate-popup-global {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-size: cover; background-position: center;
+            z-index: 9999; display: none; align-items: center; justify-content: center; text-align: center;
+        }
+        .gate-overlay-global { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); }
+        .gate-content-global {
+            position: relative; z-index: 10000; color: white; padding: 30px; width: 90%; max-width: 400px; 
+            background: rgba(18, 18, 20, 0.95); border-radius: 12px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+        .gate-content-global h3 { font-weight: 800; color: #fff; margin-top: 0; margin-bottom: 10px; font-size: 24px; }
+        .gate-content-global h3 span { color: #f5b50a; }
+        .gate-content-global p { font-size: 15px; color: #ccc; margin-bottom: 25px; line-height: 1.5; }
+        .btn-register-global {
+            display: inline-block; width: 100%; padding: 15px; background: #f5b50a; color: #000;
+            border: none; font-weight: 800; border-radius: 6px; cursor: pointer;
+            transition: 0.2s; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .btn-register-global:hover { background: #ffcc33; transform: translateY(-2px); color: #000; }
+
+        /* =========================================
+           5. HALAMAN 404 & DAFTAR FILM
+           ========================================= */
+        #error-404 { display: none; text-align: center; padding: 100px 15px; }
+        #error-404 i { font-size: 100px; color: #f5b50a; margin-bottom: 20px; }
+        #error-404 h2 { font-weight: 800; color: #fff; }
+        #error-404 p { color: #888; font-size: 16px; margin-bottom: 30px; }
+        .btn-404 { background-color: #f5b50a; color: #000; font-weight: 700; padding: 10px 25px; border-radius: 6px; font-size: 16px; display: inline-block; }
+        
+        .content-area { margin-top: 15px; display: none; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f1f23; padding-bottom: 10px; margin-bottom: 20px; }
+        .section-title { color: #ffffff; font-weight: 700; position: relative; margin: 0; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: -11px; width: 40px; height: 2px; background-color: #f5b50a; }
+
+        /* EFEK BLUR SAAT SCROLLING DATA KEMBALI */
+        .row-movies { transition: filter 0.3s ease; }
+        .row-movies.is-loading { filter: blur(3px); pointer-events: none; }
+
+        .movie-card { display: block; border-radius: 6px; transition: transform 0.2s ease; cursor: pointer; }
+        .movie-card:hover { transform: translateY(-4px); }
+        .poster-container { position: relative; width: 100%; background-color: #1a1a1c; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+        .poster-container::before { content: ""; display: block; padding-top: 145%; }
+        .poster-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        .badge-rating { position: absolute; bottom: 6px; right: 6px; background-color: rgba(11, 11, 13, 0.85); color: #e5e5e5; font-weight: 600; border-radius: 3px; display: flex; align-items: center; padding: 2px 5px; font-size: 11px; backdrop-filter: blur(2px); }
+        .badge-rating i { color: #f5b50a; font-size: 12px; margin-right: 4px; }
+        .movie-text-area { padding-top: 8px; width: 100%; }
+        .movie-title { color: #e4e4e7; font-weight: 600; margin: 0 0 2px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+        .movie-year { color: #71717a; margin: 0; font-weight: 500; font-size: 12px; }
+
+        .loading-spinner { text-align: center; padding: 20px 0; display: none; }
+        .loading-spinner i { font-size: 30px; color: #f5b50a; animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* =========================================
+           6. MEDIA QUERIES
+           ========================================= */
+        @media (max-width: 767px) {
+            .brand-logo-img { height: 22px; margin-right: 6px; }
+            .brand-text { font-size: 18px; }
+            .wrapper-utama { padding: 0 8px; }
+            .col-md-8, .col-md-4, .col-lg-9, .col-lg-3 { padding-left: 0; padding-right: 0; } 
+            
+            .play-center i { font-size: 50px; }
+            .controls-bar { padding: 5px 8px; }
+            .controls-btns { gap: 10px; }
+            .controls-btns i { font-size: 20px; }
+            .time-text { font-size: 10px; }
+            .title-pro { font-size: 18px; }
+            
+            .section-header { margin-bottom: 15px; }
+            .section-title { font-size: 16px; }
+            .section-title::after { width: 30px; bottom: -11px; }
+            
+            .row-movies { margin-left: -4px; margin-right: -4px; }
+            .col-movie { padding-left: 4px; padding-right: 4px; margin-bottom: 15px; }
+            .movie-title { font-size: 11px; }
+            
+            .sidebar-container { margin-top: 30px; padding: 0 10px; }
+            .gate-content-global h3 { font-size: 20px; }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            .brand-logo-img { height: 26px; }
+            .brand-text { font-size: 20px; }
+            .title-pro { font-size: 22px; }
+            
+            .row-movies { margin-left: -8px; margin-right: -8px; }
+            .col-movie { padding-left: 8px; padding-right: 8px; margin-bottom: 20px; }
+            .movie-title { font-size: 13px; }
+            .sidebar-container { margin-top: 30px; }
+        }
+        
+        @media (min-width: 992px) {
+            .brand-text { font-size: 24px; }
+            .title-pro { font-size: 26px; }
+            
+            .row-movies { margin-left: -10px; margin-right: -10px; }
+            .col-movie { padding-left: 10px; padding-right: 10px; margin-bottom: 25px; }
+            .movie-title { font-size: 15px; }
+            
+            .bottom-nav { display: none; }
+            body { padding-bottom: 20px; } 
+            .col-md-8, .col-lg-9 { padding-left: 0; }
+            .sidebar-container { padding-left: 20px; }
+        }
