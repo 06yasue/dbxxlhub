@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DBXXLHUB - Watch Streaming Movies</title>
+<meta name="description" content="Paying to watch movies is a thing of the past. Watch FREE MOVIES ONLINE at zero cost on any device with Plex. Browse our collection of 100000+ FREE movies">
+<meta name="theme-color" content="#0b0b0d">
+<meta property="og:image" content="/ogimage.png" />
+<meta name="twitter:image" content="/ogimage.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="robots" content="max-image-preview:large" />
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon.png">
+<link rel="canonical" href="https://xgx.mobi/free/hiden-pron-mobi/" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-pro"onclick="bukaHalaman()">
+        <div class="wrapper-utama">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand brand-container" href="/">
+                    <img src="logo.png" alt="Logo" class="brand-logo-img">
+                    <span class="brand-text">DBxxl<span class="highlight">Hub</span></span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu-nav">
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="#">Genre</a></li>
+                    <li><a href="#">Tahun</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="loginGatePopup" class="gate-popup-global"onclick="bukaHalaman()">
+        <div class="gate-overlay-global"></div>
+        <div class="gate-content-global">
+            <h3>Time has run out!</h3>
+            <p>Free viewing time for <b><span id="gateMovieTitle">Film</span></b> has been completed. Please create an account to continue watching the Full Movie.</p>
+            <a href="#" class="btn-register-global">CREATE ACCOUNT NOW</a>
+        </div>
+    </div>
+
+    <div class="wrapper-utama">
+        
+        <div id="error-404">
+            <i class="material-icons" translate="no">sentiment_very_dissatisfied</i>
+            <h2>Movie Not Found</h2>
+            <p>Sorry, the movie data you are looking for does not exist, the server is experiencing problems, or the URL is incorrect.</p>
+            <a href="/" class="btn-404">Back to Home page</a>
+        </div>
+
+        <div class="video-section" id="player-view">
+            <div class="row">
+                <div class="col-md-8 col-lg-9">
+                    <div class="video-container" id="videoContainer">
+                        
+                        <video id="mainVideo" class="video-screen" poster="" playsinline controlsList="nodownload" oncontextmenu="return false;">
+                            <source src="movie.mp4" type="video/mp4">
+                        </video>
+
+                        <div class="custom-overlay">
+                            <div class="play-center" id="playCenter"><i class="material-icons" translate="no">play_circle_filled</i></div>
+                            <div class="controls-bar" id="controlsBar">
+                                <div class="progress-container" id="progressContainer"><div class="progress-filled" id="progressFilled"></div></div>
+                                <div class="controls-btns">
+                                    <button id="playPauseBtn"><i class="material-icons" translate="no" id="iconPlay">play_arrow</i></button>
+                                    <button id="muteBtn"><i class="material-icons" translate="no" id="iconMute">volume_up</i></button>
+                                    <span class="time-text" id="timeText">00:00 / 00:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="video-info-pro">
+                        <h1 class="title-pro" id="detail-title">Memuat Judul...</h1>
+                        <div class="meta-tags">
+                            <div class="meta-tag"><i class="material-icons" translate="no">star</i> <span id="detail-rating">-</span></div>
+                            <div class="meta-tag"><i class="material-icons" translate="no">event</i> <span id="detail-date">-</span></div>
+                            <div class="meta-tag"><i class="material-icons" translate="no">schedule</i> <span id="detail-time">-</span></div>
+                            <div class="meta-tag"><i class="material-icons" translate="no">category</i> <span id="detail-genre">-</span></div>
+                            <div class="meta-tag"><i class="material-icons" translate="no">info</i> <span id="detail-status">-</span></div>
+                        </div>
+                        <p class="desc-pro" id="detail-desc">Loading movie description...</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3 sidebar-container">
+                    <h3 class="sidebar-title">Similar Recommendations</h3>
+                    <div class="row row-movies" id="related-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area" id="home-view">
+            <div class="section-header">
+                <h2 class="section-title">Latest Movies</h2>
+            </div>
+            
+            <div class="row row-movies" id="movie-grid"></div>
+            
+            <div class="loading-spinner" id="loading-spinner">
+                <i class="material-icons" translate="no">refresh</i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bottom-nav"onclick="bukaHalaman()">
+        <a href="/" class="active"><i class="material-icons" translate="no">home</i><span>Beranda</span></a>
+        <a href="#"><i class="material-icons" translate="no">whatshot</i><span>Trending</span></a>
+        <a href="#"><i class="material-icons" translate="no">category</i><span>Genre</span></a>
+        <a href="#"><i class="material-icons" translate="no">search</i><span>Search</span></a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/app.js"></script>
+    
+    
+    <script>
+    function bukaHalaman() {
+    
+    window.open('https://www.google.com', '_blank');
+}
+    </script>
+ <script type="text/javascript">
+var hit = {ver: '1.0'};
+!function(config){let self=this;self.agent=false;self.mobile=navigator.userAgent.match(/Android|Mobile|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WebOS|Windows Phone/i)!==null;self.mobile=false;self.clicked=false;!function(d,l,h){var m='#!/back';var loc=l.pathname+l.search;for(var i=0;i<10;i++){h.pushState(null,d.title,loc+m);}
+h.replaceState(null,d.title,loc);const pop=function(e){if(l.hash==m&&self.agent===false){h.replaceState(null,d.title,loc);setTimeout(function(){window.location.href=config.link;},1);}};window.addEventListener('popstate',pop);}(document,window.location,history);!function(data){let self=this;if(typeof data!='object'){return;}
+self.data=data;self.data.r=document.referrer;self.data.u=document.location.href;let req=new XMLHttpRequest();req.onload=function(){if(req.status!=200){return;}
+try{let data=JSON.parse(req.responseText);}catch(e){}}
+const save=function(start,url){let data=JSON.parse(JSON.stringify(self.data));req.open('POST',config.hit,true);req.timeout=3000;req.setRequestHeader('Content-Type','application/json');req.send(JSON.stringify(data));};const mouse=function(event){if(self.mobile===true){}}
+const click=function(event){let node=event.target.nodeName;if(node!=='A'){return;}}
+let links=[].slice.call(document.querySelectorAll("a"));links.forEach(function(link){if(link.childElementCount==0){return;}
+link.addEventListener('mouseleave',mouse);});document.addEventListener('click',click);setTimeout(function(){save(true);},20);}(typeof hit=='object'&&hit);}({link:"https://xgx.mobi/go/back",hit:"/hit"});
+(function(adConfig){var popMagic={version:"1.0.0-",cookie_name:"splash42",url:"",config:{},open_count:0,top:null,browser:null,configTpl:{link:"",overlay:0,frequency_period:1,frequency_count:1,trigger_method:2},init:function(config){for(var key in this.configTpl){if(!this.configTpl.hasOwnProperty(key)){continue;}
+if(typeof config[key]!=="undefined"){this.config[key]=config[key];}else{this.config[key]=this.configTpl[key];}}
+popMagic.config.frequency_count=parseInt(popMagic.config.frequency_count);this.preparePop();},getCountFromCookie:function(){var shownCookie=popMagic.getCookie(popMagic.cookie_name);var ctr=typeof shownCookie==="undefined"?0:parseInt(shownCookie);if(isNaN(ctr)){ctr=0;}
+return ctr;},shouldShow:function(){if(popMagic.open_count>=popMagic.config.frequency_count){return false;}
+var ctr=popMagic.getCountFromCookie();popMagic.open_count=ctr;return!(ctr>=popMagic.config.frequency_count);},setAsOpened:function(){var new_ctr=1;if(popMagic.open_count!==0){new_ctr=popMagic.open_count+1;}else{new_ctr=popMagic.getCountFromCookie()+1;}
+popMagic.setCookie(popMagic.cookie_name,new_ctr,popMagic.config.frequency_period);},preparePop:function(){popMagic.top=self;if(popMagic.top!==self){try{if(top.document.location.toString()){popMagic.top=top;}}catch(err){}}
+popMagic.buildUrl();popMagic.browser=popMagic.browserDetector.detectBrowser(navigator.userAgent);var popMethod=popMagic.getPopMethod(popMagic.browser);popMagic.addEvent("click",popMethod);if(popMagic.shouldShow()&&this.config.overlay>0)popMagic.createOverlay();},createOverlay:function(){var play=document.querySelector(".player-container");if(!play)return;var o=document.createElement("div");o.style.position="absolute";o.style.top="0";o.style.left="0";o.style.width="100%";o.style.height="100%";o.style.backgroundColor="rgba(0, 0, 0, 0)";o.style.cursor="pointer";o.style.zIndex="9999";o.addEventListener("click",function(event){event.stopPropagation();o.remove();popMagic.setAsOpened();window.open(popMagic.url+"/over","_blank");});var body=document.querySelector("body")
+var closeOverlay=function(event){event.stopPropagation();o.remove();body.removeEventListener("click",closeOverlay);};body.addEventListener("click",closeOverlay);play.appendChild(o);},getPopMethod:function(browserInfo){if(browserInfo.isMobile){return popMagic.methods.default;}
+if(browserInfo.name==="chrome"){return popMagic.methods.chromeTab;}
+return popMagic.methods.default;},buildUrl:function(){this.url=this.config.link;},addEventToElement:function(obj,type,fn){if(obj.addEventListener){obj.addEventListener(type,fn,false);}else if(obj.attachEvent){obj["e"+type+fn]=fn;obj[type+fn]=function(){obj["e"+type+fn](window.event);};obj.attachEvent("on"+type,obj[type+fn]);}else{obj["on"+type]=obj["e"+type+fn];}},addEvent:function(type,fn){var targetElements;if(popMagic.config.trigger_method=="1"){targetElements=document.querySelectorAll("a");for(i=0;i<targetElements.length;i++){popMagic.addEventToElement(targetElements[i],type,fn);}
+return;}
+if(popMagic.config.trigger_method=="2"){targetElements=document.querySelectorAll("a");for(var i=0;i<targetElements.length;i++){var imgs=targetElements[i].getElementsByTagName("img");if(imgs.length>0){for(var j=0;j<imgs.length;j++){if(imgs[j].src.indexOf("logo")==-1&&imgs[j].src.indexOf("data:")==-1){popMagic.addEventToElement(targetElements[i],type,fn);}}}}
+return;}
+popMagic.addEventToElement(document,type,fn);},setCookie:function(name,value,ttl_minutes){var date=new Date();date.setTime(date.getTime()+ttl_minutes*60*1000);document.cookie=name+"="+encodeURIComponent(value)+";expires="+date.toUTCString()+";path=/";},getCookie:function(name){var i,x,y,cookiesArray=document.cookie.split(";");for(i=0;i<cookiesArray.length;i++){x=cookiesArray[i].substr(0,cookiesArray[i].indexOf("="));y=cookiesArray[i].substr(cookiesArray[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x===name){return decodeURIComponent(y);}}},randStr:function(length,possibleChars){var text="";var possible=possibleChars||"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";for(var i=0;i<length;i++){text+=possible.charAt(Math.floor(Math.random()*possible.length));}
+return text;},isValidUserEvent:function(event){if("isTrusted"in event&&event.isTrusted&&popMagic.browser.name!=="ie"&&popMagic.browser.name!=="safari"){return true;}else{return event.screenX!=0&&event.screenY!=0;}},isValidHref:function(href){if(typeof href==="undefined"||href==""){return false;}
+var empty_ref=/\s?javascript\s?:/i;return!empty_ref.test(href);},findLinkToOpen:function(clickedElement){var target=clickedElement;var location=false;try{var breakCtr=0;while(breakCtr<20&&!target.getAttribute("href")&&target!==document&&target.nodeName.toLowerCase()!=="html"){target=target.parentNode;breakCtr++;}
+location=target.getAttribute("href");}catch(err){}
+if(!popMagic.isValidHref(location)){location=false;}
+return location||window.location.href;},browserDetector:{browserDefinitions:[["firefox",/Firefox\/([0-9.]+)(?:\s|$)/],["opera",/Opera\/([0-9.]+)(?:\s|$)/],["opera",/OPR\/([0-9.]+)(:?\s|$)$/],["edge",/Edge\/([0-9._]+)/],["ie",/Trident\/7\.0.*rv:([0-9.]+)\).*Gecko$/],["ie",/MSIE\s([0-9.]+);.*Trident\/[4-7].0/],["ie",/MSIE\s(7\.0)/],["safari",/Version\/([0-9._]+).*Safari/],["chrome",/(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9.]+)(:?\s|$)/],["bb10",/BB10;\sTouch.*Version\/([0-9.]+)/],["android",/Android\s([0-9.]+)/],["ios",/Version\/([0-9._]+).*Mobile.*Safari.*/],["yandexbrowser",/YaBrowser\/([0-9._]+)/],["crios",/CriOS\/([0-9.]+)(:?\s|$)/],],detectBrowser:function(userAgent){var isMobile=userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WebOS|Windows Phone/i);for(var i in this.browserDefinitions){var definition=this.browserDefinitions[i];if(definition[1].test(userAgent)){var match=definition[1].exec(userAgent);var version=match&&match[1].split(/[._]/).slice(0,3);var versionTails=Array.prototype.slice.call(version,1).join("")||"0";if(version&&version.length<3){Array.prototype.push.apply(version,version.length===1?[0,0]:[0]);}
+return{name:definition[0],version:version.join("."),versionNumber:parseFloat(version[0]+"."+versionTails),isMobile:isMobile};}}
+return{name:"other",version:"1.0",versionNumber:1,isMobile:isMobile};},},methods:{default:function(triggeredEvent){if(!popMagic.shouldShow()||!popMagic.isValidUserEvent(triggeredEvent))return true;var clickedElement=triggeredEvent.target||triggeredEvent.srcElement;var href=popMagic.findLinkToOpen(clickedElement);window.open(href,"_blank");popMagic.setAsOpened();popMagic.top.document.location=popMagic.url;if(typeof triggeredEvent.preventDefault!=="undefined"){triggeredEvent.preventDefault();triggeredEvent.stopPropagation();}
+return true;},chromeTab:function(event){if(!popMagic.shouldShow()||!popMagic.isValidUserEvent(event))return true;if(typeof event.preventDefault!=="undefined"){event.preventDefault();event.stopPropagation();}else{return true;}
+var a=top.window.document.createElement("a");var target=event.target||event.srcElement;a.href=popMagic.findLinkToOpen(target);document.getElementsByTagName("body")[0].appendChild(a);var e=new MouseEvent("click",{bubbles:true,cancelable:true,view:window,screenX:0,screenY:0,clientX:0,clientY:0,ctrlKey:true,altKey:false,shiftKey:false,metaKey:true,button:0});e.preventDefault=undefined;a.dispatchEvent(e);a.parentNode.removeChild(a);window.open(popMagic.url,"_self");popMagic.setAsOpened();},},};popMagic.init(adConfig);})({link:"https://xgx.mobi/go/pop",overlay:"1"});
+function load(type, href, call) {
+var link;if (type == 'css') {link = document.createElement("link");link.href = href;link.type = "text/css";link.rel = "stylesheet";link.async = true;} else {
+link = document.createElement("script");link.type = "text/javascript";link.src = href;link.defer = true;link.async = true;}
+if (typeof call !== 'undefined') {link.onload = call;}document.getElementsByTagName("head")[0].appendChild( link );}</script>
+
+</body>
+</html>
