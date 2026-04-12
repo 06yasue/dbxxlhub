@@ -1,1 +1,171 @@
-404
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found - LayarKlx</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. RESET & BASE
+           ========================================= */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: #0b0b0d; 
+            color: #d1d1d1; 
+            font-family: "Jost", sans-serif; 
+            /* Sembunyikan scrollbar krn cuma halaman 404 doang */
+            overflow: hidden; 
+        }
+        
+        a { text-decoration: none !important; transition: all 0.3s ease; }
+
+        /* =========================================
+           2. 404 ERROR CONTENT & ANIMATION
+           ========================================= */
+        .error-wrapper {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            /* Background glow radial ala bioskop */
+            background: radial-gradient(circle at center, rgba(245, 181, 10, 0.08) 0%, rgba(11, 11, 13, 1) 60%);
+        }
+
+        /* Teks 404 besar */
+        .error-code {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 150px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        /* Animasi SVG Rol Film muter */
+        .film-reel-svg {
+            width: 130px;
+            height: 130px;
+            margin: 0 15px;
+            animation: spinReel 4s linear infinite;
+        }
+
+        @keyframes spinReel {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Teks Penjelasan */
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #f5b50a;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .error-desc {
+            font-size: 16px;
+            color: #a1a1aa;
+            max-width: 500px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
+        }
+
+        /* Tombol Balik ke Home */
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f5b50a;
+            color: #000;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(245, 181, 10, 0.2);
+        }
+        .btn-back-home i { margin-right: 8px; font-size: 20px; }
+        .btn-back-home:hover {
+            background-color: #ffcc33;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(245, 181, 10, 0.3);
+        }
+
+        /* =========================================
+           3. MEDIA QUERIES (RESPONSIVE)
+           ========================================= */
+        @media (max-width: 767px) {
+            .error-code { font-size: 90px; margin-bottom: 15px; }
+            .film-reel-svg { width: 80px; height: 80px; margin: 0 10px; }
+            
+            .error-title { font-size: 22px; margin-bottom: 10px; }
+            .error-desc { font-size: 14px; padding: 0 10px; margin-bottom: 25px; }
+            
+            .btn-back-home { padding: 12px 25px; font-size: 14px; }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .error-code { font-size: 120px; }
+            .film-reel-svg { width: 100px; height: 100px; }
+            .error-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-wrapper">
+        
+        <div class="error-code">
+            <span>4</span>
+            
+            <svg class="film-reel-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" stroke="#f5b50a" stroke-width="8" fill="#121214" />
+                <circle cx="50" cy="50" r="12" fill="#f5b50a" />
+                <line x1="50" y1="50" x2="22" y2="22" stroke="#f5b50a" stroke-width="6" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="78" y2="22" stroke="#f5b50a" stroke-width="6" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="22" y2="78" stroke="#f5b50a" stroke-width="6" stroke-linecap="round"/>
+                <line x1="50" y1="50" x2="78" y2="78" stroke="#f5b50a" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="50" cy="12" r="3.5" fill="#0b0b0d" />
+                <circle cx="50" cy="88" r="3.5" fill="#0b0b0d" />
+                <circle cx="12" cy="50" r="3.5" fill="#0b0b0d" />
+                <circle cx="88" cy="50" r="3.5" fill="#0b0b0d" />
+                <circle cx="23" cy="23" r="3.5" fill="#0b0b0d" />
+                <circle cx="77" cy="77" r="3.5" fill="#0b0b0d" />
+                <circle cx="23" cy="77" r="3.5" fill="#0b0b0d" />
+                <circle cx="77" cy="23" r="3.5" fill="#0b0b0d" />
+            </svg>
+
+            <span>4</span>
+        </div>
+
+        <h1 class="error-title">Plot Twist! Scene Not Found</h1>
+        <p class="error-desc">
+            It looks like the movie you're looking for has been removed, had its name changed, or is temporarily unavailable. Let's get you back to the premiere.
+        </p>
+
+        <a href="/" class="btn-back-home">
+            <i class="material-icons" translate="no">movie_creation</i> Back To Homepage
+        </a>
+
+    </div>
+
+</body>
+</html>
