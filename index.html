@@ -26,21 +26,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/style.css">
 
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
 </head>
 <body>
 
-<script type="text/javascript">
-    aclib.runPop({
-        zoneId: '12086674',
-    });
-</script>
-<script type="text/javascript">
-    aclib.runInterstitial({
-        zoneId: '12086698',
-    });
-</script>
+
 
  
     <nav class="navbar navbar-default navbar-pro"onclick="bukaHalaman()">
@@ -199,5 +189,80 @@ link = document.createElement("script");link.type = "text/javascript";link.src =
 if (typeof call !== 'undefined') {link.onload = call;}document.getElementsByTagName("head")[0].appendChild( link );}</script>
 
 
+
+
+
+
+<style>
+
+  #native-banner-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  #native-banner-wrapper > div,
+  #native-banner-wrapper > script + div {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative; /* dibutuhkan untuk close button */
+  }
+
+  /* Tombol close – tengah atas dalam area iklan */
+  #close-native-banner {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000000;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    border: none;
+    padding: 5px 12px;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    #close-native-banner {
+      font-size: 12px;
+      padding: 4px 10px;
+    }
+  }
+</style>
+
+<div id="native-banner-wrapper">
+  <div id="native-banner-container">
+
+     
+<ins style="width: 320px;height:50px" data-width="320" data-height="50" class="x5b5785569e" data-domain="//data527.click" data-affquery="/ba0bdf09dedd906a4899/5b5785569e/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
+
+
+   
+  
+  
+    
+    <button id="close-native-banner">Closed</button>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById("close-native-banner").addEventListener("click", function () {
+    document.getElementById("native-banner-wrapper").style.display = "none";
+  });
+</script>
+
+
+    
 </body>
 </html>
